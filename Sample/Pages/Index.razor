@@ -1,0 +1,28 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1 id="demo">Hello, world!</h1>
+
+Welcome to your new app.
+
+@using Arad.Blazor.JavaScriptCalling
+
+@inject IJavaScriptCallingService javaScriptCallingService
+ 
+<button @onclick="@CallFunction">
+    Print PDF
+</button>
+<SurveyPrompt Title="How is Blazor working for you?" />
+@code{
+
+    private async void CallFunction()
+    {
+        var demo1 = await javaScriptCallingService.GetInnerHtmlAsync("demo");
+        await javaScriptCallingService.InvokeVoidAsync("alert", $"Call directly GetInnerHtmlAsync  {demo1}");
+
+        var demo2 = await javaScriptCallingService.InvokeAsync("getInnerHtml","demo");
+        await javaScriptCallingService.InvokeVoidAsync("alert", $"Call getInnerHtml from InvokeAsync  {demo1}");
+    }
+
+}
