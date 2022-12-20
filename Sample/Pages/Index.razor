@@ -1,19 +1,16 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+@using Arad.Blazor.JavaScriptCalling
+
+@inject IJavaScriptCallingService javaScriptCallingService
 
 <h1 id="demo">Hello, world!</h1>
 
 Welcome to your new app.
-
-@using Arad.Blazor.JavaScriptCalling
-
-@inject IJavaScriptCallingService javaScriptCallingService
  
 <button @onclick="@CallFunction">
     Print PDF
 </button>
-<SurveyPrompt Title="How is Blazor working for you?" />
 @code{
 
     private async void CallFunction()

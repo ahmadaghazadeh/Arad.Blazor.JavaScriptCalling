@@ -1,9 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<id>Arad.Blazor.JavaScriptCallingr</id>
+	<version>1.0.1</version>
+	<authors>Ahmad Aghazadeh</authors>
+	<description>Call javascript function in Blazor using JavaScript Interop</description>
+	<releaseNotes>Add GetInnerHtmlAsync.</releaseNotes>
+	<copyright>Arad Company</copyright>
+	<tags>Arad And Ahmad Aghazadeh</tags>
   </PropertyGroup>
 
   <ItemGroup>
