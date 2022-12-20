@@ -7,7 +7,7 @@
 Install
 ``` bash
 
-dotnet add package Arad.Blazor.JavaScriptCalling --version 1.0.2
+dotnet add package Arad.Blazor.JavaScriptCalling  
 
 ```
 

@@ -1,4 +1,5 @@
-﻿namespace Arad.Blazor.JavaScriptCalling
+﻿using System.Threading.Tasks;
+namespace Arad.Blazor.JavaScriptCalling
 {
     public interface IJavaScriptCallingService
     {

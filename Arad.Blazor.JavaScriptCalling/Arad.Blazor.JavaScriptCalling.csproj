@@ -1,22 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFrameworks>net7.0;net6.0</TargetFrameworks>
     <Nullable>enable</Nullable>
 	<id>Arad.Blazor.JavaScriptCallingr</id>
-	<version>1.0.2</version>
+	<version>1.0.4</version>
 	<authors>Ahmad Aghazadeh</authors>
 	<description>Call javascript function in Blazor using JavaScript Interop</description>
-	<releaseNotes>Add GetInnerHtmlAsync.</releaseNotes>
+	<releaseNotes>Add Multi Targetframeworks support.</releaseNotes>
 	<copyright>Arad Company</copyright>
 	<tags>Arad And Ahmad Aghazadeh</tags>
+	  <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
-  <ItemGroup>
+  
+	
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.1" />
   </ItemGroup>
 
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.12" />
+	</ItemGroup>
+ 
   <ItemGroup>
     <None Update="wwwroot\scripts.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
