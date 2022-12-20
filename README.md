@@ -1,10 +1,9 @@
 # Arad.Blazor.JavaScriptCalling
-Call javascript function in Blazor using JavaScript Interop
+Call Javascript function in Blazor using JavaScript Interop
 
-This is a library to easily use JavaScript method in Blazor.
+This is a library to easily use the JavaScript methods in Blazor.
 
-
-For inject:
+### For inject:
 ``` c#
 
     builder.Services.AddJavaScriptCalling();
@@ -24,7 +23,7 @@ There are 3 useful methods for calling JavaScript methods.
 
 ```
 
-Useage in Blazor page
+### Useage in Blazor page
 
 ``` c#
 
