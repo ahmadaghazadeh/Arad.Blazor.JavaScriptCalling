@@ -32,7 +32,8 @@ There are 3 useful methods for calling JavaScript methods.
        Task InvokeVoidAsync(string functionPath, params object[] args);
        Task<string> GetInnerHtmlAsync(string elementId);
        Task<string> InvokeAsync(string functionPath, params object[] args);
-
+       Task<string> getElementCanvas(string elementId);
+       Task downloadElementIamge(string elementId,string fileName);
 ```
 
 ### Usage in Blazor page
@@ -45,15 +46,25 @@ There are 3 useful methods for calling JavaScript methods.
 
 @inject IJavaScriptCallingService javaScriptCallingService
 
+<div id="printableId">
 <h1 id="demo">Hello, world!</h1>
 
 Welcome to your new app.
- 
-<button @onclick="@CallFunction">
-    Print PDF
-</button>
-@code{
 
+
+<div>
+    <img src="@printableImage" alt="Red dot" />
+</div>
+
+    <button @onclick="@CallFunction">
+        Execute
+    </button>
+
+</div>
+ 
+
+@code{
+    private string printableImage="";
     private async void CallFunction()
     {
         var demo1 = await javaScriptCallingService.GetInnerHtmlAsync("demo");
@@ -61,11 +72,11 @@ Welcome to your new app.
 
         var demo2 = await javaScriptCallingService.InvokeAsync("getInnerHtml","demo");
         await javaScriptCallingService.InvokeVoidAsync("alert", $"Call getInnerHtml from InvokeAsync  {demo1}");
+
+        printableImage = await javaScriptCallingService.getElementCanvas("printableId");
+        StateHasChanged();
     }
 
 }
 
 ````
-
-
-
