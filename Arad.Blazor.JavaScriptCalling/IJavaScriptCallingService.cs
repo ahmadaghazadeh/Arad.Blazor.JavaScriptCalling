@@ -7,6 +7,10 @@ namespace Arad.Blazor.JavaScriptCalling
        Task<string> GetInnerHtmlAsync(string elementId);
        Task<string> InvokeAsync(string functionPath, params object[] args);
 
+        Task<string> getElementCanvas(string elementId);
+
+        Task downloadElementIamge(string elementId,string fileName);
+
     }
 }
 
