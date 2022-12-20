@@ -1,4 +1,14 @@
 # Arad.Blazor.JavaScriptCalling
+
+[Nuget](https://www.nuget.org/packages/Arad.Blazor.JavaScriptCalling)
+
+Install
+``` bash
+
+dotnet add package Arad.Blazor.JavaScriptCalling --version 1.0.2
+
+```
+
 Call Javascript function in Blazor using JavaScript Interop
 
 This is a library to easily use the JavaScript methods in Blazor.
@@ -23,7 +33,7 @@ There are 3 useful methods for calling JavaScript methods.
 
 ```
 
-### Useage in Blazor page
+### Usage in Blazor page
 
 ``` c#
 
