@@ -4,10 +4,10 @@
     <TargetFrameworks>net7.0;net6.0</TargetFrameworks>
     <Nullable>enable</Nullable>
 	<id>Arad.Blazor.JavaScriptCallingr</id>
-	<version>1.0.5</version>
+	<version>1.0.8</version>
 	<authors>Ahmad Aghazadeh</authors>
 	<description>Call javascript function in Blazor using JavaScript Interop</description>
-	<releaseNotes>Add GetElementCanvas and downloadElementIamge.</releaseNotes>
+	<releaseNotes>Add PutToImg.</releaseNotes>
 	<copyright>Arad Company</copyright>
 	<tags>Arad And Ahmad Aghazadeh</tags>
 	  <ImplicitUsings>enable</ImplicitUsings>

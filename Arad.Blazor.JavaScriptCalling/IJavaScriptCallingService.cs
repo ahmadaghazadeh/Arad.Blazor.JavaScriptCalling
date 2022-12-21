@@ -9,7 +9,11 @@ namespace Arad.Blazor.JavaScriptCalling
 
         Task<string> getElementCanvas(string elementId);
 
-        Task downloadElementIamge(string elementId,string fileName);
+        Task DownloadElementIamge(string elementId,string fileName);
+
+        Task PutToCanvas(string from, string canvasTag,int width, int hight);
+
+        Task PutToImg(string from, string imgTag);
 
     }
 }

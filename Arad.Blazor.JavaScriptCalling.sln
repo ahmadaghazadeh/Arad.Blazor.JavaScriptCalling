@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csproj", "{E5CB72D8-0103-4AAA-8A63-30AD6CE78B51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arad.Blazor.JavaScriptCalling", "Arad.Blazor.JavaScriptCalling\Arad.Blazor.JavaScriptCalling.csproj", "{9D53C817-64C1-48F3-A08D-5F6B9B7C9742}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arad.Blazor.JavaScriptCalling", "Arad.Blazor.JavaScriptCalling\Arad.Blazor.JavaScriptCalling.csproj", "{9D53C817-64C1-48F3-A08D-5F6B9B7C9742}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

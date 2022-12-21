@@ -17,26 +17,26 @@ namespace Arad.Blazor.JavaScriptCalling
 
         public async Task InvokeVoidAsync(string functionPath, params object[] args)
         {
-            if (module is null)
-                await ImportModule();
+            await ImportModule();
             await module.InvokeVoidAsync("InvokeVoidAsync", functionPath, args);
         }
 
         public async Task<string> InvokeAsync(string functionPath, params object[] args)
         {
-            if (module is null)
-                await ImportModule();
+            await ImportModule();
             return await module.InvokeAsync<string>(functionPath, args);
         }
 
         internal async ValueTask ImportModule()
         {
-            module = await jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Arad.Blazor.JavaScriptCalling/scripts.js");
+            if (module is null)
+                module = await jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Arad.Blazor.JavaScriptCalling/scripts.js");
         }
 
         internal async ValueTask ImportHtml2canvasModule()
         {
-            html2canvasModule = await jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Arad.Blazor.JavaScriptCalling/html2canvas.js");
+            if (html2canvasModule is null)
+                html2canvasModule = await jsRuntime.InvokeAsync<IJSObjectReference>("import", "./_content/Arad.Blazor.JavaScriptCalling/html2canvas.js");
         }
 
         public async Task<string> GetInnerHtmlAsync(string elementId)
@@ -47,16 +47,31 @@ namespace Arad.Blazor.JavaScriptCalling
 
         public async Task<string> getElementCanvas(string elementId)
         {
-            if (html2canvasModule is null)
-                await ImportHtml2canvasModule();
+            await ImportHtml2canvasModule();
             return await html2canvasModule.InvokeAsync<string>("getElementCanvas", elementId);
         }
 
-        public async Task downloadElementIamge(string elementId, string fileName)
+       
+
+        public async Task DownloadElementIamge(string elementId, string fileName)
         {
-            if (html2canvasModule is null)
-                await ImportHtml2canvasModule();
+            await ImportHtml2canvasModule();
             await html2canvasModule.InvokeVoidAsync("ConvertElementToJpg", elementId, fileName);
+        }
+
+     
+
+        public async Task PutToCanvas(string from, string canvasTag, int width, int hight)
+        {
+            await ImportHtml2canvasModule();
+            await html2canvasModule.InvokeVoidAsync("putToCanvas", from, canvasTag, width, hight);
+        }
+
+        public async Task PutToImg(string from, string imgTag)
+        {
+          
+            await ImportHtml2canvasModule();
+            await html2canvasModule.InvokeVoidAsync("putToImg", from, imgTag);
         }
     }
 }

@@ -7847,11 +7847,30 @@
 //# sourceMappingURL=html2canvas.js.map
 
 export function getElementCanvas(id) {
-    const element = document.getElementById(id)
     return new Promise((resolve, reject) => {
-        html2canvas(element).then(canvas => {
+        html2canvas(document.getElementById(id)).then(canvas => {
             resolve(canvas.toDataURL())
         });
+    });
+}
+
+export function putToCanvas(from,to,width,hight) {
+    html2canvas(document.getElementById(from)).then(canvas => {
+        var canvasID = document.getElementById(to);
+        //get the destination context
+        var ctx = canvasID.getContext('2d');
+        ctx.width = width;
+        ctx.height = hight;
+        ctx.drawImage(canvas, 0, 0);
+     });
+}
+
+export function putToImg(from, to) {
+    console.log("1")
+    html2canvas(document.getElementById(from)).then(canvas => {
+        var img = document.getElementById(to);
+        console.log(img)
+        img.src=canvas.toDataURL()
     });
 }
 
