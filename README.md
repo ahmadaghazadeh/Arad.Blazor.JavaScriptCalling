@@ -26,7 +26,7 @@ This is a library to easily use the JavaScript methods in Blazor.
 
 ```
 
-There are 3 useful methods for calling JavaScript methods.
+There are 7 useful methods for calling JavaScript methods.
 ``` c#
 
         Task InvokeVoidAsync(string functionPath, params object[] args);
