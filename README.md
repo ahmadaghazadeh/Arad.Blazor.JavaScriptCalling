@@ -1,6 +1,7 @@
 # Arad.Blazor.JavaScriptCalling
 
-[Nuget](https://www.nuget.org/packages/Arad.Blazor.JavaScriptCalling)
+[![NuGet](https://img.shields.io/nuget/dt/Arad.Blazor.JavaScriptCalling.svg)](https://www.nuget.org/packages/Arad.Blazor.JavaScriptCalling)
+[![NuGet](https://img.shields.io/nuget/vpre/Arad.Blazor.JavaScriptCalling.svg)](https://www.nuget.org/packages/Arad.Blazor.JavaScriptCalling)
 
 [Github](https://github.com/ahmadaghazadeh/Arad.Blazor.JavaScriptCalling)
 
