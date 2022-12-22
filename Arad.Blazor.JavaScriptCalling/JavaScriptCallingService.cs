@@ -45,10 +45,10 @@ namespace Arad.Blazor.JavaScriptCalling
         }
 
 
-        public async Task<string> getElementCanvas(string elementId)
+        public async Task<string> GetImageBase64(string elementId)
         {
             await ImportHtml2canvasModule();
-            return await html2canvasModule.InvokeAsync<string>("getElementCanvas", elementId);
+            return await html2canvasModule.InvokeAsync<string>("GetImageBase64", elementId);
         }
 
        

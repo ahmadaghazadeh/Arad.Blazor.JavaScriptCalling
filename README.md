@@ -46,6 +46,7 @@ There are 7 useful methods for calling JavaScript methods.
 @page "/"
 
 @using Arad.Blazor.JavaScriptCalling
+@using Net.Codecrete.QrCodeGenerator;
 
 @inject IJavaScriptCallingService javaScriptCallingService
 <div class="row">
@@ -58,6 +59,9 @@ There are 7 useful methods for calling JavaScript methods.
     <button class="col" @onclick="@CallTestElement">
         Call Elements
     </button>
+    <button class="col" @onclick="@GetIamge">
+        GetIamge
+    </button>
 </div>
 
 <div class="row">
@@ -65,26 +69,31 @@ There are 7 useful methods for calling JavaScript methods.
     <div class="col">
         <canvas id="myCanvas"></canvas>
         <div>
-            <img id="printableImage" alt="Red dot" />
+            <img id="printableImage" alt="Red dot" src="@imageSrc" />
         </div>
     </div>
     <div class="col">
        <div id="printableId">
             @for (int i = 0; i < counter; i++)
             {
-            <h1 id="demo">Hello, world!</h1>
+                <div>Welcome to your new app.</div>
             }
-            Welcome to your new app.
         </div>
     </div>
 </div>
 
 
-
-
-
 @code{
+    
     private int counter = 0;
+    private string imageSrc="";
+    private async void GetIamge()
+    {
+        counter++;
+        imageSrc=await javaScriptCallingService.GetImageBase64("printableId");
+        StateHasChanged();
+    }
+
     private async void PutToCanvas()
     {
         counter++;
@@ -98,7 +107,6 @@ There are 7 useful methods for calling JavaScript methods.
         StateHasChanged();
     }
 
-
     private async void CallTestElement()
     {
         var demo1 = await javaScriptCallingService.GetInnerHtmlAsync("demo");
@@ -107,7 +115,6 @@ There are 7 useful methods for calling JavaScript methods.
         var demo2 = await javaScriptCallingService.InvokeAsync("getInnerHtml","demo");
         await javaScriptCallingService.InvokeVoidAsync("alert", $"Call getInnerHtml from InvokeAsync  {demo1}");
     }
-
 }
 
 ````

@@ -7846,7 +7846,7 @@
 })));
 //# sourceMappingURL=html2canvas.js.map
 
-export function getElementCanvas(id) {
+export function GetImageBase64(id) {
     return new Promise((resolve, reject) => {
         html2canvas(document.getElementById(id)).then(canvas => {
             resolve(canvas.toDataURL())
